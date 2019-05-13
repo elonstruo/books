@@ -16,6 +16,7 @@
 	// console.log(Object)
 
 	var Model = {
+
 		inherited: function () {},
 		created: function () {},
 
@@ -36,18 +37,19 @@
 		init: function () {
 			var instance = Object.create(this.prototype);
 			instance.parent = this;
+			var instance = this;
 			instance.init.apply(instance, arguments);
 			return instance
 		}
 	}
 
-	var Asset = Model.create();
+	// var Asset = Model.create();
+	// var asset = Asset.init()
 	var User = Model.create();
 
 	var asset = Asset.init()
 	var user = User.init()
 
-	console.log('Asset');
 	console.log(Asset);
 	console.log('asset');
 	console.log(asset);
